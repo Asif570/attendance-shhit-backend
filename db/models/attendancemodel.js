@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const attendancemodel = new mongoose.Schema({
+const attendanceschema = new mongoose.Schema({
   studentId: String,
-  name: String,
+  username: String,
   status: {
     type: String,
     default: "Present",
   },
 });
-
+const attendancemodel = new mongoose.model("attendancemodel", attendanceschema);
 module.exports = attendancemodel;
